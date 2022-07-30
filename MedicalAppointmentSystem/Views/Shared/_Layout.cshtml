@@ -6,7 +6,13 @@
     <title>@ViewData["Title"] - Medical Appointment System</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
-    
+    <!--Calendar-->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.5.1/main.min.css" />
+    <link rel="stylesheet" href="https://kendo.cdn.telerik.com/2020.2.513/styles/kendo.default-v2.min.css" />
+    <link href="~/lib/select2/css/select2.css" rel="stylesheet" />
+    <!--End Calendar-->
 
     <!-- bootstrap.min css -->
   <link rel="stylesheet" href="~/plugins/bootstrap/bootstrap.min.css">
@@ -54,7 +60,7 @@
         <div class="col-lg-12">
           <nav class="navbar navbar-expand-lg px-0 py-4">
             <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
-                <img src="~/images/logo.png" width="100"/>
+                <img src="~/images/logo.png" width="90" height="90"/>
               
             </a>
       
@@ -87,26 +93,10 @@
                 </li>
                 <li class="nav-item @@service"><a class="nav-link" href="#">Services</a></li>
                 <li class="nav-item @@project"><a class="nav-link" href="#">Portfolio</a></li>
-                <li class="nav-item dropdown @@blog">
-                  <a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Blog <i class="fas fa-chevron-down small"></i></a>
-                  <ul class="dropdown-menu" aria-labelledby="dropdown05">
-                    <li><a class="dropdown-item @@blogGrid" href="#">Blog Grid</a></li>
-                    <li><a class="dropdown-item @@blogSidebar" href="#">Blog with Sidebar</a></li>
-                    <li><a class="dropdown-item @@blogSingle" href="#">Blog Single</a></li>
-      
-                    <li class="dropdown dropdown-submenu dropleft">
-                      <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0501" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
-            
-                      <ul class="dropdown-menu" aria-labelledby="dropdown0501">
-                        <li><a class="dropdown-item" href="#">Submenu 01</a></li>
-                        <li><a class="dropdown-item" href="#">Submenu 02</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </li>
-                <li class="nav-item @@contact"><a class="nav-link" href="#">Contact</a></li>
-              </ul>
-      
+                
+                  <partial name ="_LoginPartial" />
+
+                </ul>
               <div class="my-2 my-md-0 ml-lg-4 text-center">
                 <a href="contact.html" class="btn btn-solid-border btn-round-full">Get an Appointment</a>
               </div>
@@ -146,6 +136,7 @@
    
         </main>
     </div>
+    <!--
     <section class="mt-70 position-relative">
 	<div class="container">
 		<div class="cta-block-2 bg-gray p-5 rounded border-1">
@@ -161,6 +152,7 @@
 		</div>
 	</div>
 </section>
+-->
 <!--Footer area-->
  <div class="container pt-3">
     <div class="row">
@@ -241,11 +233,37 @@
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
+    <!--Caledar-->
+    <script type="text/javascript" src="~/lib/select2/js/select2.full.min.js"></script>
+    @*<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.5.1"></script>*@
+    <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
+     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"
+      integrity="sha512-o0rWIsZigOfRAgBxl4puyd0t6YKzeAw9em/29Ag7lhCQfaaua/mDwnpE2PVzwqJ08N7/wqrgdjc2E0mwdSY2Tg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script type="text/javascript" src="~/js/notify.min.js"></script>
+    <script src="~/js/script-custom-calendar.js"></script>
+
+
+    <!--End Caledar-->
+
     <!-- 
 Essential Scripts
 =====================================-->
-<!-- Main jQuery -->
-<script src="~/plugins/jquery/jquery.min.js"></script>
+<!-- Main jQuery 
+<script src="~/plugins/jquery/jquery.min.js"></script>-->
 <!-- Bootstrap 4.3.1 -->
 <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
 <!--  Magnific Popup-->
