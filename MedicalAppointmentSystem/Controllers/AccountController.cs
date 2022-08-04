@@ -12,14 +12,14 @@ namespace MedicalAppointmentSystem.Controllers
     {
         private readonly ApplicationDbContext _db;
         UserManager<ApplicationUser> _userManager;
-        SignInManager<ApplicationUser> _signManager;
+        SignInManager<ApplicationUser> _signInManager;
         RoleManager<IdentityRole> _roleManager;
         public AccountController(ApplicationDbContext db, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager, SignInManager<ApplicationUser> signInManager)
         {
             _db = db;
             _userManager = userManager;
             _roleManager = roleManager;
-            _signManager = signInManager;
+            _signInManager = signInManager;
         }
         public IActionResult Login()
         {
@@ -31,10 +31,10 @@ namespace MedicalAppointmentSystem.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = await _signManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe,false);
+                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Appointment");
                 }
                 ModelState.AddModelError("", "Invalid login attempt");
             }
@@ -69,7 +69,7 @@ namespace MedicalAppointmentSystem.Controllers
                 if (result.Succeeded)
                 {
                     await _userManager.AddToRoleAsync(user,model.RoleName);
-                    await _signManager.SignInAsync(user, isPersistent: false);
+                    await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }
                 foreach (var error in result.Errors)
@@ -83,7 +83,7 @@ namespace MedicalAppointmentSystem.Controllers
         [HttpPost]
         public async Task<IActionResult> LogOff()
         {
-            await _signManager.SignOutAsync();
+            await _signInManager.SignOutAsync();
             return RedirectToAction("Login", "Account");
         }
     }

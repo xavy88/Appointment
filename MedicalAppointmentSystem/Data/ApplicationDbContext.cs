@@ -10,5 +10,7 @@ namespace MedicalAppointmentSystem.Data
         {
 
         }
+       public DbSet<Speciality> Specialities { get; set; }
+       public DbSet<Appointment> Appointments { get; set; }
     }
 }

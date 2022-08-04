@@ -98,7 +98,7 @@
 
                 </ul>
               <div class="my-2 my-md-0 ml-lg-4 text-center">
-                <a href="contact.html" class="btn btn-solid-border btn-round-full">Get an Appointment</a>
+                <a class="btn btn-solid-border btn-round-full" asp-controller="Appointment" asp-action="Index">Get an Appointment</a>
               </div>
             </div>
           </nav>
@@ -234,25 +234,14 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
 
     <!--Caledar-->
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
     <script type="text/javascript" src="~/lib/select2/js/select2.full.min.js"></script>
-    @*<script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.5.1"></script>*@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/fullcalendar@5.5.1"></script>
     <script src="https://kendo.cdn.telerik.com/2020.2.513/js/kendo.all.min.js"></script>
-
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/qtip2/3.0.3/jquery.qtip.min.js"></script>
-     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
-      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"
-      integrity="sha512-o0rWIsZigOfRAgBxl4puyd0t6YKzeAw9em/29Ag7lhCQfaaua/mDwnpE2PVzwqJ08N7/wqrgdjc2E0mwdSY2Tg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
     <script type="text/javascript" src="~/js/notify.min.js"></script>
     <script src="~/js/script-custom-calendar.js"></script>
 
@@ -275,8 +264,8 @@ Essential Scripts
 <script src="~/plugins/counterup/jquery.counterup.min.js"></script>
 
 <!-- Google Map -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
-<script src="~/plugins/google-map/map.js" defer></script>
+@*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
+<script src="~/plugins/google-map/map.js" defer></script>*@
 
 <script src="~/js/script.js"></script>
 
