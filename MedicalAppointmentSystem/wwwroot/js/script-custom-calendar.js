@@ -12,7 +12,7 @@ var calendar;
 function InitializeCalendar() {
     try {
 
-
+        var temp = $("#doctorId").val();
         var calendarEl = document.getElementById('calendar');
         if (calendarEl != null) {
             calendar = new FullCalendar.Calendar(calendarEl, {
@@ -30,7 +30,7 @@ function InitializeCalendar() {
                 eventDisplay: 'block',
                 events: function (fetchInfo, successCallback, failureCallback) {
                     $.ajax({
-                        url: routeURL + '/api/Appointment/GetCalendarData?doctorId=' + $("#doctorId").val(),
+                        url: 'https://localhost:44315/api/Appointment/GetCalendarData?doctorId=' + $ ("#doctorId").val(),
                         type: 'GET',
                         dataType: 'JSON',
                         success: function (response) {
@@ -83,6 +83,7 @@ function onShowModal(obj, isEventDetail) {
         $("#id").val(obj.id);
         $("#lblPatientName").html(obj.patientName);
         $("#lblDoctorName").html(obj.doctorName);
+        $("#lblSpecialityName").html(obj.specialityName);
         if (obj.isDoctorApproved) {
             $("#lblStatus").html('Approved');
             $("#btnConfirm").addClass("d-none");
@@ -173,7 +174,7 @@ function checkValidation() {
 
 function getEventDetailsByEventId(info) {
     $.ajax({
-        url: routeURL + '/api/Appointment/GetCalendarDataById/' + info.id,
+        url: 'https://localhost:44315/api/Appointment/GetCalendarDataById/' + info.id,
         type: 'GET',
         dataType: 'JSON',
         success: function (response) {

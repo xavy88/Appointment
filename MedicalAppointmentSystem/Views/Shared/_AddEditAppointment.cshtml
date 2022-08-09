@@ -3,8 +3,15 @@
         <div class="modal-content">
             <form id="appointmentForm" autocomplete="off" novalidate="novalidate">
                 <div class="modal-header">
-                    <h4 class="modal-title"><i class="fa fa-calendar" aria-hidden="true"></i> Add/Edit Appointment</h4>
-                 </div>
+                    @if (User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Admin))
+                   {
+                        <h4 class="modal-title"><i class="fa fa-calendar" aria-hidden="true"></i> Add/Edit Appointment</h4>
+                    }
+                    else
+                    {
+                         <h4 class="modal-title"><i class="fa fa-calendar" aria-hidden="true"></i>Appointment Details</h4>
+                    }
+                </div>
                  <div class="modal-body">
                      <div class="form-group">
                          <label for="title">Title</label>
@@ -14,11 +21,39 @@
                          <label for="description">Description</label>
                          <textarea type="text" class="form-control" id="description"></textarea>
                      </div>
+                      @if (User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Admin))
+                      {
                      <div class="form-group">
                          <label for="title">Select Patient</label>
                          <select id="patientId" asp-items="@(new SelectList(ViewBag.PatientList, "Id", "Name"))" class="form-control"></select>
-                     </div>
-                     <div class="form-group">
+                        </div>
+                    }
+                    else
+                    {
+                        @if (User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Doctor))
+                        {
+                             <div class="form-group">
+                                 <label for="lblPatientName">Patient Name</label>
+                                 <label type="text" class="form-control" disabled id="lblPatientName"></label>
+                            </div>
+                                <div class="form-group">
+                                 <label for="lblStatus">Status</label>
+                                 <label type="text" class="form-control" disabled id="lblStatus"></label>
+                            </div>
+                        }
+                         @if (User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Patient))
+                        {
+                             <div class="form-group">
+                                 <label for="lblDoctoName">Doctor Name</label>
+                                 <label type="text" class="form-control" disabled id="lblDoctorName"></label>
+                            </div>
+                                <div class="form-group">
+                                 <label for="lblStatus">Status</label>
+                                 <label type="text" class="form-control" disabled id="lblStatus"></label>
+                            </div>
+                        }
+                    }
+                        <div class="form-group">
                          <label for="title">Select Speciality</label>
                          <select id="specialityId" asp-items="@(new SelectList(ViewBag.SpecialityList, "Id", "Name"))" class="form-control"></select>
                      </div>
@@ -33,8 +68,20 @@
                      <input type="hidden" id="id" />
                  </div>
                  <div class="modal-footer">
-                     <button type="button" class="btn btn-secondary" onclick="onCloseModal();">Close</button> &nbsp;
-                     <button type="button" id="btnSubmit" class="btn btn-success" onclick="onSubmitForm();">Submit</button> &nbsp;
+                     <button type="button" class="btn btn-secondary" onclick="onCloseModal();"> Close</button> &nbsp;
+
+                     @if (User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Admin))
+                    {
+                     <button type="button" id="btnSubmit" class="btn btn-success" onclick="onSubmitForm();">Submit</button>
+                     <button type="button" id="btnDelete" class="btn btn-danger hidden" onclick="onDeleteAppointment();"> Delete</button>
+                    }
+
+                       @if (User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Doctor))
+                    {
+                     <button type="button" id="btnConfirm" class="btn btn-success" onclick="onConfirm();">Confirm</button>
+                     <button type="button" id="btnDelete" class="btn btn-danger hidden" onclick="onDeleteAppointment();">Delete</button>
+                    }
+
                  </div>
             </form>
            
