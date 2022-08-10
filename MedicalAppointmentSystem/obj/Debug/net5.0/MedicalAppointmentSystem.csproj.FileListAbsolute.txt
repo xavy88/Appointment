@@ -100,7 +100,6 @@ C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Abstractions.dll
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Composite.dll
-C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Embedded.dll
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\refs\Microsoft.Extensions.Hosting.Abstractions.dll
@@ -435,3 +434,9 @@ C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\obj\Debug\net5.0\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\obj\Debug\net5.0\Razor\Views\Appointment\Index.cshtml.g.cs
 C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\obj\Debug\net5.0\Razor\Views\Shared\_AddEditAppointment.cshtml.g.cs
+C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\MedicalAppointmentSystem.StaticWebAssets.xml
+C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\Mailjet.Client.dll
+C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.Views.V4.dll
+C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\Microsoft.AspNetCore.Identity.UI.dll
+C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\bin\Debug\net5.0\Microsoft.Extensions.FileProviders.Embedded.dll
+C:\Users\matri\Desktop\Net Core 2022\Appointment\Medical Appointment System\Code\MedicalAppointmentSystem\MedicalAppointmentSystem\obj\Debug\net5.0\staticwebassets\MedicalAppointmentSystem.StaticWebAssets.xml

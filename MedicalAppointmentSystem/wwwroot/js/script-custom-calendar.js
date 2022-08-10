@@ -197,7 +197,7 @@ function onDoctorChange() {
 function onDeleteAppointment() {
     var id = parseInt($("#id").val());
     $.ajax({
-        url: routeURL + '/api/Appointment/DeleteAppoinment/' + id,
+        url:'https://localhost:44315/api/Appointment/DeleteAppoinment/' + id,
         type: 'GET',
         dataType: 'JSON',
         success: function (response) {
@@ -221,7 +221,7 @@ function onDeleteAppointment() {
 function onConfirm() {
     var id = parseInt($("#id").val());
     $.ajax({
-        url: routeURL + '/api/Appointment/ConfirmEvent/' + id,
+        url:'https://localhost:44315/api/Appointment/ConfirmEvent/' + id,
         type: 'GET',
         dataType: 'JSON',
         success: function (response) {

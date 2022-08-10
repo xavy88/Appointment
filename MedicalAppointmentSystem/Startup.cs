@@ -13,6 +13,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using MedicalAppointmentSystem.Models;
 using MedicalAppointmentSystem.Services;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using MedicalAppointmentSystem.Utility;
 
 namespace MedicalAppointmentSystem
 {
@@ -34,6 +36,14 @@ namespace MedicalAppointmentSystem
             services.AddTransient<IAppointmentService, AppointmentService>();
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<ApplicationDbContext>();
 
+            services.AddDistributedMemoryCache();
+            services.AddScoped<IEmailSender, EmailSender>();
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromDays(10);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
             services.AddHttpContextAccessor();
 
             services.AddRazorPages();
@@ -59,7 +69,7 @@ namespace MedicalAppointmentSystem
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

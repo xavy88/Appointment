@@ -14,7 +14,8 @@ namespace MedicalAppointmentSystem.Utility
         public static string appointmentDeleted = "Appointment deleted successfully.";
         public static string appointmentExists = "Appointment for selected date and time already exists.";
         public static string appointmentNotExists = "Appointment not exists.";
-
+        public static string meetingConfirm = "Meeting Confirm successfully.";
+        public static string meetingConfirmError = "Error while Confirming meeting";
         public static string appointmentAddError = "Something went wront, Please try again.";
         public static string appointmentUpdatError = "Something went wront, Please try again.";
         public static string somethingWentWrong = "Something went wront, Please try again.";
@@ -22,14 +23,26 @@ namespace MedicalAppointmentSystem.Utility
         public static int success_code = 1;
         public static int failure_code = 0;
 
-        public static List<SelectListItem> GetRolesForDropDown()
+        public static List<SelectListItem> GetRolesForDropDown(bool isAdmin)
         {
-            return new List<SelectListItem>
+            if (isAdmin)
+            {
+                return new List<SelectListItem>
             {
                 new SelectListItem{Value = Helper.Admin, Text = Helper.Admin},
                 new SelectListItem{Value = Helper.Patient, Text = Helper.Patient},
                 new SelectListItem{Value = Helper.Doctor, Text = Helper.Doctor},
             };
+            }
+            else
+            {
+            return new List<SelectListItem>
+            {
+                new SelectListItem{Value = Helper.Patient, Text = Helper.Patient},
+                new SelectListItem{Value = Helper.Doctor, Text = Helper.Doctor},
+            };
+
+            }
         }
 
         public static List<SelectListItem> GetTimeDropDown()

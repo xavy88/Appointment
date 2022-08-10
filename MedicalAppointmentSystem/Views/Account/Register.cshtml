@@ -38,7 +38,7 @@
 
           <!-- Role DropDown -->
           <div class="form-outline mb-4">
-            <select asp-for="RoleName"  asp-items="@MedicalAppointmentSystem.Utility.Helper.GetRolesForDropDown()" class="form-control form-control-lg"></select>
+            <select asp-for="RoleName"  asp-items="@MedicalAppointmentSystem.Utility.Helper.GetRolesForDropDown(User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Admin))" class="form-control form-control-lg"></select>
             <label asp-for="RoleName" class="form-label" for="form1Example23">Role</label>
             <span asp-validation-for="RoleName" class="text-danger"></span>
           </div>
