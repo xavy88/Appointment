@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace MedicalAppointmentSystem.Controllers
 {
+    [Authorize]
     public class AppointmentController : Controller
     {
         private readonly IAppointmentService _appointmentService;
@@ -13,7 +14,7 @@ namespace MedicalAppointmentSystem.Controllers
         {
             _appointmentService = appointmentService;
         }
-        [Authorize]
+        //[Authorize(Roles =Helper.Admin))
         public IActionResult Index()
         {
             ViewBag.Duration = Helper.GetTimeDropDown();

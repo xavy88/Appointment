@@ -15,6 +15,7 @@ using MedicalAppointmentSystem.Models;
 using MedicalAppointmentSystem.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using MedicalAppointmentSystem.Utility;
+using MedicalAppointmentSystem.Data.DbInitializer;
 
 namespace MedicalAppointmentSystem
 {
@@ -38,6 +39,7 @@ namespace MedicalAppointmentSystem
 
             services.AddDistributedMemoryCache();
             services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IDbInitializer, DbInitializer>();
             services.AddSession(options =>
             {
                 options.IdleTimeout = TimeSpan.FromDays(10);
@@ -51,7 +53,7 @@ namespace MedicalAppointmentSystem
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -70,6 +72,7 @@ namespace MedicalAppointmentSystem
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseSession();
+            dbInitializer.Initialize();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
