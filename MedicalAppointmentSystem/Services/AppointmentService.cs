@@ -99,14 +99,14 @@ namespace MedicalAppointmentSystem.Services
             return 0;
         }
 
-        public List<AppointmentVM> DoctorsEventById(string doctorId)
+        public List<AppointmentVM> DoctorsEventsById(string doctorId)
         {
-            return _db.Appointments.Where(x=>x.DoctorId ==doctorId).ToList().Select(c=>new AppointmentVM()
+            return _db.Appointments.Where(x => x.DoctorId == doctorId).ToList().Select(c => new AppointmentVM()
             {
                 Id = c.Id,
                 Description = c.Description,
-                StartDate = c.StartDate.ToString("yyy-MM-dd HH:mm:ss"),
-                EndDate = c.EndDate.ToString("yyy-MM-dd HH:mm:ss"),
+                StartDate = c.StartDate.ToString("yyyy-MM-dd HH:mm:ss"),
+                EndDate = c.EndDate.ToString("yyyy-MM-dd HH:mm:ss"),
                 Title = c.Title,
                 Duration = c.Duration,
                 IsDoctorApproved = c.IsDoctorApproved

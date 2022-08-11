@@ -85,18 +85,23 @@
                       <a class="dropdown-item dropdown-toggle" href="#!" id="dropdown0301" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sub Menu</a>
             
                       <ul class="dropdown-menu" aria-labelledby="dropdown0301">
-                        <li><a class="dropdown-item" href="index.html">Submenu 01</a></li>
-                        <li><a class="dropdown-item" href="index.html">Submenu 02</a></li>
+                        <li><a class="dropdown-item" href="">Submenu 01</a></li>
+                        <li><a class="dropdown-item" href="">Submenu 02</a></li>
                       </ul>
                     </li>
                   </ul>
                 </li>
                 <li class="nav-item @@service"><a class="nav-link" href="#">Services</a></li>
-                <li class="nav-item @@project"><a class="nav-link" href="#">Portfolio</a></li>
-                
+                                
                   <partial name ="_LoginPartial" />
 
                 </ul>
+                 @if(User.IsInRole(MedicalAppointmentSystem.Utility.Helper.Admin))
+                  {
+                    <div class="my-2 my-md-0 ml-lg-2 text-center">
+                <a class="btn btn-solid-border btn-round-full" asp-controller="Account" asp-action="Register">Registration</a>
+              </div>
+                  }
               <div class="my-2 my-md-0 ml-lg-4 text-center">
                 <a class="btn btn-solid-border btn-round-full" asp-controller="Appointment" asp-action="Index">Get an Appointment</a>
               </div>
@@ -108,27 +113,7 @@
   </div>
 </header>
 <!-- Header Close -->
-    <!--<header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">MedicalAppointmentSystem</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>-->
+    
    <div>
         <main role="main" class="pb-3">
             
@@ -136,23 +121,7 @@
    
         </main>
     </div>
-    <!--
-    <section class="mt-70 position-relative">
-	<div class="container">
-		<div class="cta-block-2 bg-gray p-5 rounded border-1">
-			<div class="row justify-content-center align-items-center ">
-				<div class="col-lg-7">
-					<span class="text-color">For Every type of needs</span>
-					<h2 class="mt-2 mb-4 mb-lg-0">Entrust Your Help to Our Best Team of Professionals</h2>
-				</div>
-				<div class="col-lg-4">
-					<a href="contact.html" class="btn btn-main btn-round-full float-lg-right ">Request an Appointment</a>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
--->
+   
 <!--Footer area-->
  <div class="container pt-3">
     <div class="row">
@@ -195,7 +164,7 @@
       <div class="col-lg-3 col-sm-6">
         <div class="widget">
           <div class="logo mb-4">
-            <h3>Schedule<span>Appointment.</span></h3>
+            <h3>Schedule<span> Appointment.</span></h3>
           </div>
           <h6><a href="#">Support@xavy.com</a></h6>
           <a href="#"><span class="text-color h4">+123-456-7890</span></a>
@@ -251,8 +220,7 @@
     <!-- 
 Essential Scripts
 =====================================-->
-<!-- Main jQuery 
-<script src="~/plugins/jquery/jquery.min.js"></script>-->
+
 <!-- Bootstrap 4.3.1 -->
 <script src="~/plugins/bootstrap/bootstrap.min.js"></script>
 <!--  Magnific Popup-->
@@ -262,10 +230,6 @@ Essential Scripts
 <!-- Counterup -->
 <script src="~/plugins/counterup/jquery.waypoints.min.js"></script>
 <script src="~/plugins/counterup/jquery.counterup.min.js"></script>
-
-<!-- Google Map -->
-@*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU" defer></script>
-<script src="~/plugins/google-map/map.js" defer></script>*@
 
 <script src="~/js/script.js"></script>
 

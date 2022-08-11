@@ -68,12 +68,12 @@ namespace MedicalAppointmentSystem.Controllers.Api
                 }
                 else if (role == Helper.Patient)
                 {
-                    commonResponse.dataenum = _appointmentService.DoctorsEventById(loginUserId);
+                    commonResponse.dataenum = _appointmentService.DoctorsEventsById(loginUserId);
                     commonResponse.status = Helper.success_code;
                 }
                 else
                 {
-                    commonResponse.dataenum = _appointmentService.DoctorsEventById(doctorId);
+                    commonResponse.dataenum = _appointmentService.DoctorsEventsById(doctorId);
                     commonResponse.status = Helper.success_code;
                 }
             }

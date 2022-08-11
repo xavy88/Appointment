@@ -35,8 +35,6 @@ namespace MedicalAppointmentSystem.Controllers
                 var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
                 if (result.Succeeded)
                 {
-                    //var user = await _userManager.FindByNameAsync(model.Email);
-                    //HttpContext.Session.SetString("ssuserName", user.Name);
                     return RedirectToAction("Index", "Appointment");
                 }
                 ModelState.AddModelError("", "Invalid login attempt");

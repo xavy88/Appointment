@@ -1,5 +1,4 @@
-﻿/*var routeURL = location.protocol + '//' + location.host;*/
-var routeURL = 'https://localhost:44315/';
+﻿//var routeURL = location.protocol + "//" + location.host;
 $(document).ready(function () {
     $("#appointmentDate").kendoDateTimePicker({
         value: new Date(),
@@ -12,7 +11,7 @@ var calendar;
 function InitializeCalendar() {
     try {
 
-        var temp = $("#doctorId").val();
+
         var calendarEl = document.getElementById('calendar');
         if (calendarEl != null) {
             calendar = new FullCalendar.Calendar(calendarEl, {
@@ -30,7 +29,7 @@ function InitializeCalendar() {
                 eventDisplay: 'block',
                 events: function (fetchInfo, successCallback, failureCallback) {
                     $.ajax({
-                        url: 'https://localhost:44315/api/Appointment/GetCalendarData?doctorId=' + $ ("#doctorId").val(),
+                        url: 'https://localhost:44315/api/Appointment/GetCalendarData?doctorId=' + $("#doctorId").val(),
                         type: 'GET',
                         dataType: 'JSON',
                         success: function (response) {
@@ -83,7 +82,6 @@ function onShowModal(obj, isEventDetail) {
         $("#id").val(obj.id);
         $("#lblPatientName").html(obj.patientName);
         $("#lblDoctorName").html(obj.doctorName);
-        $("#lblSpecialityName").html(obj.specialityName);
         if (obj.isDoctorApproved) {
             $("#lblStatus").html('Approved');
             $("#btnConfirm").addClass("d-none");
@@ -111,7 +109,7 @@ function onCloseModal() {
     //$("#title").val('');
     //$("#description").val('');
     //$("#appointmentDate").val('');
-   
+
     $("#appointmentInput").modal("hide");
 }
 
@@ -124,7 +122,6 @@ function onSubmitForm() {
             StartDate: $("#appointmentDate").val(),
             Duration: $("#duration").val(),
             DoctorId: $("#doctorId").val(),
-            SpecialityId: $("#specialityId").val(),
             PatientId: $("#patientId").val(),
         };
 
@@ -144,7 +141,7 @@ function onSubmitForm() {
                 }
             },
             error: function (xhr) {
-                $.notify("Error Unhandle", "error");
+                $.notify("Error", "error");
             }
         });
     }
@@ -197,7 +194,7 @@ function onDoctorChange() {
 function onDeleteAppointment() {
     var id = parseInt($("#id").val());
     $.ajax({
-        url:'https://localhost:44315/api/Appointment/DeleteAppoinment/' + id,
+        url: 'https://localhost:44315/api/Appointment/DeleteAppoinment/' + id,
         type: 'GET',
         dataType: 'JSON',
         success: function (response) {
@@ -221,7 +218,7 @@ function onDeleteAppointment() {
 function onConfirm() {
     var id = parseInt($("#id").val());
     $.ajax({
-        url:'https://localhost:44315/api/Appointment/ConfirmEvent/' + id,
+        url: 'https://localhost:44315/api/Appointment/ConfirmEvent/' + id,
         type: 'GET',
         dataType: 'JSON',
         success: function (response) {
